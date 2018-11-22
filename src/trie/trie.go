@@ -105,8 +105,12 @@ func (t *Trie) ReplaceWord(word string) string {
 					chars[startKey+bKey] = bRlt
 
 				}
+				//重置，将检索指针返回第一层
+				node = t.root
+			}else{
+				node = node.chirldren[char]
 			}
-			node = node.chirldren[char]
+
 		}else{
 			startFlag 	= true
 			box 		= box[0:0]
